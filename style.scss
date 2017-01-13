@@ -1,0 +1,325 @@
+$green: #3eb867;
+$gray: #d3d3d3;
+@mixin transition($time) {
+  transition:color #{$time}s ease-in-out 0s,border-color #{$time}s ease-in-out 0s;
+  -webkit-transition:color #{$time}s ease-in-out 0s,border-color #{$time}s ease-in-out 0s;
+  -o-transition:color #{$time}s ease-in-out 0s,border-color #{$time}s ease-in-out 0s;
+  -ms-transition:color #{$time}s ease-in-out 0s,border-color #{$time}s ease-in-out 0s;
+}
+@mixin animation-duration($time) {
+  animation-duration:#{$time}s;
+  -webkit-animation-duration:#{$time}s;
+  -o-animation-duration:#{$time}s;
+  -ms-animation-duration:#{$time}s;
+}
+@mixin animation-delay($time) {
+  animation-delay:#{$time}s;
+  -webkit-animation-delay:#{$time}s;
+  -o-animation-delay:#{$time}s;
+  -ms-animation-delay:#{$time}s;
+}
+html, body{
+	overflow:hidden;
+}
+@font-face {
+  font-family: 'BRoya';
+  src: url('fonts/BRoya.eot?#') format('eot'),  /* IE6–8 */
+       url('fonts/BRoya.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/BRoya.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+.lang, .button{
+	font-family: arial;
+	font-weight: bold;
+	border:$gray solid;
+	color:$gray;
+	cursor:pointer;
+	line-height: 0.33;
+	@include transition('0.2');
+	@include animation-duration('0.5');
+&:hover{
+	border:$green solid;
+	color:$green;}
+}
+#close, #closeWorks{
+	font-family: arial;
+	font-weight: bold;
+	border:#fff solid;
+	color:#fff;
+	cursor:pointer;
+	font-size: 3vw;
+    top: 1vw;
+    line-height: 0.6;
+    left: 1vw;
+	@include transition('0.2');
+&:hover{
+	border:$green solid;
+	color:$green;}
+}
+.lang{
+	@include animation-delay('1');
+}
+#en{
+	line-height: 1.43 !important;
+}
+#fa{
+	line-height: 1.37 !important;
+}
+.holdOn{
+	border:$green solid;
+	color:$green;
+}
+.absolute{
+	position: absolute;
+}
+.hidden{
+	display: none;
+}
+.visi{
+	visibility: hidden;
+}
+.messageBox{
+	border-radius:5vh;
+	background-color: rgba(0,0,0,0.1);
+	color:#000;
+	z-index: 10;
+	margin-top:-40vh;
+	margin-left:-40vw;
+	width:80vw;
+	height: 80vh;
+	top:50vh;
+	left:50vw;
+	box-shadow: inset 0 0 10vh #eee;
+	@include animation-duration('1');
+}
+.toast span {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+}
+@media only screen and (orientation: landscape){
+#backlogo{
+	background:url('img/backlogo.jpg') no-repeat center center;
+	background-size:25%;
+	width:100%;
+	height:100vh;
+	@include animation-duration('1');
+	cursor:default !important;
+}
+.lang{
+	padding: 2vw;
+	font-size: 2vw;
+	border-width:0.5vw;
+&:hover{
+	border-width:0.5vw;}
+}
+#close, #closeWorks{
+	padding: 1vw;
+	font-size: 3vw;
+	border-width:0.3vw;
+&:hover{
+	border-width:0.3vw;}
+}
+#en{
+	top:50%;
+	margin-top: -6vw;
+	left:28vw;
+}
+#fa{
+	top:50%;
+	margin-top: -6vw;
+	right:28vw;
+}
+.button{
+	padding: 3vw;
+	border-width:1vw;
+&:hover{
+	border-width:1vw;}
+i {
+	font-size: 6vw !important;
+}
+}
+#app{
+	top:50%;
+	margin-top: -9vw;
+	margin-right: -9vw;
+	right:25vw;
+}
+#info{
+    font-size: 6vw !important;
+    top: 50%;
+    margin-top: -9vw;
+    margin-right: -9vw;
+    line-height: 0.33;
+    right: 43vw;
+    padding: 5.2vw;
+}
+#telegram{
+	top:50%;
+	margin-top: -9vw;
+	margin-left: -9vw;
+	left:43vw;
+	line-height: 0.33;
+}
+#changeLang{
+	top:50%;
+	margin-top: -9vw;
+	margin-left: -9vw;
+	left:25vw;
+}
+.enBox, .faBox{
+    color: #fff;
+    left: 40vw;
+    width: 60vw;
+    margin-left: -30vw;
+    text-align: center;
+    font-size: 2vw;
+    top: 40vh;
+    height: 60vh;
+    margin-top: -30vh;
+    overflow: auto;
+    letter-spacing: 0.1vw;
+    direction: ltr;
+
+p{	
+	text-align: justify;
+	margin:0 1vw;
+	padding: 0;
+}
+}
+.faBox{
+	font-family: 'BRoya';
+	direction: rtl;
+}
+.carousel{
+	height: 80vh !important;
+}
+.material-tooltip{
+	padding:0.5vw 1vw;
+	font-size:1.2vw;
+	visibility: visible;
+}
+.carousel .carousel-item{
+	width:15vw;
+	height:30vh;
+}
+#toast-container{
+	visibility: hidden;
+}
+}
+@media only screen and (orientation: portrait){
+#backlogo{
+	background:url('img/backlogo.jpg') no-repeat center center;
+	background-size:50vh;
+	width:100%;
+	height:100vh;
+	cursor:default !important;
+}
+.lang{
+	padding: 4vh;
+	font-size: 4vh;
+	border-width:1vh;
+&:hover{
+	border-width:1vh;}
+}
+#en{
+	top:15%;
+	margin-top: -8vh;
+	margin-left: -8vh;
+	left:50vw;
+}
+#fa{
+	bottom:15%;
+	margin-bottom: -8vh;
+	margin-right: -8vh;
+	right:50vw;
+}
+.button{
+	padding: 4vh;
+	border-width:1.2vh;
+&:hover{
+	border-width:1.2vh;}
+i {
+	font-size: 8vh !important;
+}
+}
+#app{
+	bottom:30vh;
+	margin-bottom: -9vh;
+	margin-left: -7.2vh;
+	left:25vw;
+}
+#info{
+	font-size: 8vh !important;
+	bottom:30vh;
+	margin-bottom: -9vh;
+	margin-right: -7.2vh;
+	right:25vw;
+    line-height: 0.33;
+    padding: 7.2vh;
+}
+#telegram{
+	top:30vh;
+	margin-top: -9vh;
+	margin-right: -7.2vh;
+	right:25vw;
+	line-height: 0.33;
+}
+#changeLang{
+	top:30vh;
+	margin-top: -9vh;
+	margin-left: -7.2vh;
+	left:25vw;
+}
+.enBox, .faBox{
+    color: #fff;
+    left: 40vw;
+    width: 60vw;
+    margin-left: -30vw;
+    text-align: center;
+    font-size: 3vh;
+    top: 40vh;
+    height: 60vh;
+    margin-top: -30vh;
+    overflow: auto;
+    letter-spacing: 0.1vw;
+    direction: ltr;
+
+p{	
+	text-align: justify;
+	margin:0 1vw;
+	padding: 0;
+}
+}
+.faBox{
+	font-family: 'BRoya';
+	direction: rtl;
+}
+.carousel{
+	height: 80vh !important;
+}
+.material-tooltip{
+	padding:1vh 1.5vh;
+	font-size:2.2vh;
+	visibility: hidden;
+}
+#close, #closeWorks{
+	padding: 1vh;
+	font-size: 6vh;
+	border-width:0.6vh;
+	cursor:pointer;
+    top: 2vh;
+    line-height: 0.6;
+    left: 2vh;
+	@include transition('0.2');
+&:hover{
+	border-width:0.6vh;}
+}
+.carousel .carousel-item{
+	width:30vh;
+	height:50vh;
+}
+#toast-container{
+	visibility: visible;
+}
+}
