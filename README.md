@@ -4,4 +4,4 @@ In fact, "PYPLE" means "Peaple". It will be useful for common people and will be
 PYPLE is the new style of web designing which uses minimal design and python for data binding.
 Its theme color is white and green.
 
-created by SeyedMehdi Mousavi & Samira Mirshfiei
+created by SeyedMehdiMousaviShoushtari & Samira Mirshafiei
